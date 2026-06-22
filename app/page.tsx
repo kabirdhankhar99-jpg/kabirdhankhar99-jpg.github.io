@@ -110,7 +110,7 @@ function Hero() {
         </h1>
         <p className="text-lg text-zinc-400 max-w-lg leading-relaxed mb-10">
           Building products at the intersection of AI, engineering, and design.
-          CS &amp; ECE at Duke University.
+          MEM at Duke University.
         </p>
         <div className="flex items-center gap-4 flex-wrap">
           <a
