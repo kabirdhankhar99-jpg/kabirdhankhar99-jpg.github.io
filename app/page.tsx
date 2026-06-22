@@ -1,6 +1,7 @@
 import { Github, Mail, ArrowUpRight, ExternalLink, FileText, ListChecks, BarChart2 } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { FadeIn } from "@/components/FadeIn";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -140,18 +141,20 @@ function Projects() {
   return (
     <section id="projects" className="px-6 py-24 bg-white dark:bg-zinc-950">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
-          Projects
-        </h2>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-12">
-          Things I&apos;ve built.
-        </p>
+        <FadeIn>
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
+            Projects
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-12">
+            Things I&apos;ve built.
+          </p>
+        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {projects.map((project) => (
+          {projects.map((project, i) => (
+            <FadeIn key={project.name} delay={i * 120} className="flex flex-col">
             <div
-              key={project.name}
-              className="group flex flex-col p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-md transition-all duration-200"
+              className="group flex flex-col p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-md transition-all duration-200 flex-1"
             >
               {/* icon row */}
               <div className="flex gap-2 mb-5">
@@ -208,24 +211,27 @@ function Projects() {
                 )}
               </div>
             </div>
+            </FadeIn>
           ))}
 
           {/* GitHub link card */}
-          <a
-            href="https://github.com/kabirdhankhar99-jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-md transition-all duration-200 text-center min-h-[240px]"
-          >
-            <Github size={22} className="text-zinc-400 dark:text-zinc-500 mb-3 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors" />
-            <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors mb-1">
-              More on GitHub
-            </p>
-            <p className="text-xs text-zinc-400 dark:text-zinc-600">
-              New projects in progress
-            </p>
-            <ArrowUpRight size={13} className="mt-3 text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors" />
-          </a>
+          <FadeIn delay={projects.length * 120} className="flex flex-col">
+            <a
+              href="https://github.com/kabirdhankhar99-jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-md transition-all duration-200 text-center min-h-[240px] flex-1"
+            >
+              <Github size={22} className="text-zinc-400 dark:text-zinc-500 mb-3 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors" />
+              <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors mb-1">
+                More on GitHub
+              </p>
+              <p className="text-xs text-zinc-400 dark:text-zinc-600">
+                New projects in progress
+              </p>
+              <ArrowUpRight size={13} className="mt-3 text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors" />
+            </a>
+          </FadeIn>
         </div>
       </div>
     </section>
@@ -241,16 +247,19 @@ function Skills() {
       className="px-6 py-24 bg-zinc-50 dark:bg-zinc-900 border-y border-zinc-200 dark:border-zinc-800"
     >
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
-          Skills
-        </h2>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-12">
-          What I work with.
-        </p>
+        <FadeIn>
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
+            Skills
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-12">
+            What I work with.
+          </p>
+        </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skills.map((group) => (
-            <div key={group.category}>
+          {skills.map((group, i) => (
+            <FadeIn key={group.category} delay={i * 75}>
+            <div>
               <h3 className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-3">
                 {group.category}
               </h3>
@@ -265,6 +274,7 @@ function Skills() {
                 ))}
               </ul>
             </div>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -278,32 +288,34 @@ function Contact() {
   return (
     <section id="contact" className="px-6 py-24 bg-white dark:bg-zinc-950">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
-          Let&apos;s talk
-        </h2>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-md leading-relaxed mb-10">
-          I&apos;m open to internships, collaborations, and interesting conversations. Reach
-          out anytime.
-        </p>
+        <FadeIn>
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
+            Let&apos;s talk
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-md leading-relaxed mb-10">
+            I&apos;m open to internships, collaborations, and interesting conversations. Reach
+            out anytime.
+          </p>
 
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="mailto:kabir.dhankhar@duke.edu"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-duke-700 hover:bg-duke-600 text-white text-sm font-medium transition-colors"
-          >
-            <Mail size={14} />
-            kabir.dhankhar@duke.edu
-          </a>
-          <a
-            href="https://github.com/kabirdhankhar99-jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 text-sm font-medium transition-colors"
-          >
-            <Github size={14} />
-            GitHub
-          </a>
-        </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="mailto:kabir.dhankhar@duke.edu"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-duke-700 hover:bg-duke-600 text-white text-sm font-medium transition-colors"
+            >
+              <Mail size={14} />
+              kabir.dhankhar@duke.edu
+            </a>
+            <a
+              href="https://github.com/kabirdhankhar99-jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 text-sm font-medium transition-colors"
+            >
+              <Github size={14} />
+              GitHub
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
