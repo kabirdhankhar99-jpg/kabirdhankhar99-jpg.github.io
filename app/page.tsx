@@ -1,5 +1,6 @@
 import { Github, Mail, ArrowUpRight, ExternalLink, FileText, ListChecks, BarChart2 } from "lucide-react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -54,15 +55,27 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href="https://github.com/kabirdhankhar99-jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-        >
-          <Github size={14} />
-          GitHub
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://docs.google.com/document/d/1vupJkfAvQdPz93myM0EzV4_gOPGJhk5c6FmrOO2DOXk/edit?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          >
+            <FileText size={14} />
+            Resume
+          </a>
+          <a
+            href="https://github.com/kabirdhankhar99-jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Github size={14} />
+            GitHub
+          </a>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
@@ -113,6 +126,15 @@ function Hero() {
           >
             <Mail size={14} />
             Get in touch
+          </a>
+          <a
+            href="https://docs.google.com/document/d/1vupJkfAvQdPz93myM0EzV4_gOPGJhk5c6FmrOO2DOXk/edit?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white text-sm font-medium transition-colors"
+          >
+            <FileText size={14} />
+            Resume
           </a>
         </div>
       </div>
@@ -196,15 +218,22 @@ function Projects() {
             </div>
           ))}
 
-          {/* Coming soon card */}
-          <div className="flex flex-col items-center justify-center p-6 rounded-2xl border border-dashed border-zinc-200 dark:border-zinc-800 text-center min-h-[240px]">
-            <p className="text-sm font-medium text-zinc-400 dark:text-zinc-600 mb-1">
-              More coming soon
+          {/* GitHub link card */}
+          <a
+            href="https://github.com/kabirdhankhar99-jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-md transition-all duration-200 text-center min-h-[240px]"
+          >
+            <Github size={22} className="text-zinc-400 dark:text-zinc-500 mb-3 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors" />
+            <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors mb-1">
+              More on GitHub
             </p>
-            <p className="text-xs text-zinc-400 dark:text-zinc-700">
-              Working on new projects...
+            <p className="text-xs text-zinc-400 dark:text-zinc-600">
+              New projects in progress
             </p>
-          </div>
+            <ArrowUpRight size={13} className="mt-3 text-zinc-400 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors" />
+          </a>
         </div>
       </div>
     </section>
