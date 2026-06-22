@@ -85,37 +85,29 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="relative flex flex-col justify-center min-h-screen px-6 pt-14 overflow-hidden bg-zinc-950">
-      {/* subtle grid */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]"
-      />
-      {/* glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-indigo-600/10 blur-3xl"
-      />
-
-      <div className="relative max-w-5xl mx-auto w-full">
-        <p className="text-xs font-medium text-indigo-400 uppercase tracking-widest mb-6">
-          Available for opportunities
-        </p>
-        <h1 className="text-5xl sm:text-7xl font-bold text-white tracking-tight leading-none mb-6">
-          Kabir
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
-            Dhankhar.
+    <section className="flex flex-col justify-center min-h-screen px-6 pt-14 bg-zinc-950">
+      <div className="max-w-5xl mx-auto w-full">
+        <div className="flex items-center gap-3 mb-10">
+          <span className="h-px w-8 bg-duke-700" />
+          <span className="font-mono text-[11px] text-zinc-500 tracking-[0.18em] uppercase">
+            Duke University · MEM
           </span>
+        </div>
+
+        <h1 className="text-5xl sm:text-7xl font-bold tracking-tight leading-[0.95] mb-6">
+          <span className="block text-white">Kabir</span>
+          <span className="text-duke-300">Dhankhar.</span>
         </h1>
-        <p className="text-lg text-zinc-400 max-w-lg leading-relaxed mb-10">
-          Building products at the intersection of AI, engineering, and design.
-          MEM at Duke University.
+
+        <p className="text-base text-zinc-400 max-w-md leading-relaxed mb-10">
+          I build AI-native products — from early concept to shipped.
+          CS &amp; ECE background, now MEM at Duke.
         </p>
-        <div className="flex items-center gap-4 flex-wrap">
+
+        <div className="flex items-center gap-3 flex-wrap">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-duke-700 hover:bg-duke-600 text-white text-sm font-medium transition-colors"
           >
             View my work
             <ArrowUpRight size={14} />
@@ -166,7 +158,7 @@ function Projects() {
                 {project.icons.map((Icon, i) => (
                   <div
                     key={i}
-                    className="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400"
+                    className="p-2 rounded-lg bg-duke-50 dark:bg-zinc-800 text-duke-700 dark:text-duke-300"
                   >
                     <Icon size={15} />
                   </div>
@@ -208,7 +200,7 @@ function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors font-medium"
+                    className="inline-flex items-center gap-1.5 text-xs text-duke-700 dark:text-duke-300 hover:text-duke-800 dark:hover:text-duke-600 transition-colors font-medium"
                   >
                     <ExternalLink size={13} />
                     Live demo
@@ -297,7 +289,7 @@ function Contact() {
         <div className="flex flex-wrap gap-4">
           <a
             href="mailto:kabir.dhankhar@duke.edu"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-duke-700 hover:bg-duke-600 text-white text-sm font-medium transition-colors"
           >
             <Mail size={14} />
             kabir.dhankhar@duke.edu
@@ -324,7 +316,7 @@ function Footer() {
     <footer className="border-t border-zinc-200 dark:border-zinc-800 px-6 py-6">
       <div className="max-w-5xl mx-auto flex items-center justify-between flex-wrap gap-2">
         <span className="text-xs text-zinc-400 dark:text-zinc-600">
-          © 2025 Kabir Dhankhar
+          © 2026 Kabir Dhankhar
         </span>
         <span className="text-xs text-zinc-400 dark:text-zinc-600">
           Built with Next.js · Hosted on GitHub Pages
