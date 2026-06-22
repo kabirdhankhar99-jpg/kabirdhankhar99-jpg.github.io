@@ -101,7 +101,7 @@ function Hero() {
 
         <p className="text-base text-zinc-400 max-w-md leading-relaxed mb-10">
           I build AI-native products — from early concept to shipped.
-          CS &amp; ECE background, now MEM at Duke.
+          CS and Software Engineering background, now MEM at Duke.
         </p>
 
         <div className="flex items-center gap-3 flex-wrap">
