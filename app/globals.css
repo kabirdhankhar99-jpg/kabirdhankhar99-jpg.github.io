@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --text: #09090b;
+}
+
+.dark {
+  --bg: #09090b;
+  --text: #fafafa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+::selection {
+  background-color: #c7d2fe;
+  color: #1e1b4b;
+}
+
+.dark ::selection {
+  background-color: #3730a3;
+  color: #e0e7ff;
+}
