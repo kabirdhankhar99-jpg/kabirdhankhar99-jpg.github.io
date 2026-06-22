@@ -28,11 +28,11 @@ body {
 }
 
 ::selection {
-  background-color: #c7d2fe;
-  color: #1e1b4b;
+  background-color: #003087;
+  color: #ffffff;
 }
 
 .dark ::selection {
-  background-color: #3730a3;
-  color: #e0e7ff;
+  background-color: #6B8CC5;
+  color: #09090b;
 }
